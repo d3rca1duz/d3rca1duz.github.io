@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jrs直播吧-免费体育直播在线观看_篮球足球赛事直播平台</title>
+<meta name="description" content="jrs直播吧是一个聚合体育赛事直播信息的导航页面，提供篮球、足球等热门赛事直播入口说明、赛程速览与常用访问指引，帮助球迷快速找到清晰流畅的观赛路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1b2a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%2320d68a' stroke-width='4'/%3E%3Cpath d='M32 16v32M16 32h32' stroke='%2320d68a' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0a1420;
+  --bg2:#0f1e2e;
+  --panel:#122335;
+  --line:#1e3a52;
+  --txt:#e6eef6;
+  --muted:#8ea6bd;
+  --green:#20d68a;
+  --amber:#ffb547;
+  --blue:#3fa9f5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,20,32,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.3px}
+.logo svg{width:30px;height:30px;flex:none}
+.logo span{color:var(--txt)}
+.logo b{color:var(--green)}
+.nav-links{display:flex;gap:26px;font-size:15px;color:var(--muted)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green);color:#052015;font-weight:700;font-size:14px;
+  padding:8px 16px;border-radius:8px;
+}
+.nav-cta:hover{filter:brightness(1.08)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:6px 10px;font-size:18px}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 80% -10%, rgba(32,214,138,.16), transparent 60%),
+    radial-gradient(700px 320px at 10% 110%, rgba(63,169,245,.12), transparent 60%),
+    linear-gradient(180deg,#0c1a29,#0a1420);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:58px 0 54px}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--green);border:1px solid rgba(32,214,138,.35);
+  background:rgba(32,214,138,.08);padding:4px 12px;border-radius:99px;margin-bottom:18px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(32,214,138,.18)}
+h1{font-size:clamp(30px,4.4vw,46px);line-height:1.2;font-weight:800;letter-spacing:.5px}
+h1 em{font-style:normal;color:var(--green)}
+.hero p.lead{margin-top:16px;color:var(--muted);font-size:16px;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 24px;border-radius:10px;font-weight:700;font-size:15px;transition:.2s;
+}
+.btn-main{background:var(--green);color:#052015}
+.btn-main:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--line);color:var(--txt);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+.btn[aria-disabled="true"]{opacity:.55;cursor:default}
+.hero-stats{display:flex;gap:34px;margin-top:34px;flex-wrap:wrap}
+.hero-stats div b{display:block;font-size:22px;color:#fff;font-weight:800}
+.hero-stats div span{font-size:13px;color:var(--muted)}
+
+/* hero visual */
+.hero-visual{
+  position:relative;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(160deg,#122435,#0c1a29);
+  padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.4);
+}
+.hero-visual h3{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:1px;margin-bottom:14px}
+.live-list{display:flex;flex-direction:column;gap:10px;list-style:none}
+.live-list li{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:10px;padding:10px 12px;font-size:14px;
+}
+.live-list .lg{display:flex;align-items:center;gap:9px;min-width:0}
+.live-list .lg svg{width:20px;height:20px;flex:none}
+.live-list .lg span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{font-size:11px;padding:2px 8px;border-radius:99px;font-weight:700;flex:none}
+.badge.live{color:#ff5b5b;background:rgba(255,91,91,.12);border:1px solid rgba(255,91,91,.4)}
+.badge.soon{color:var(--amber);background:rgba(255,181,71,.1);border:1px solid rgba(255,181,71,.38)}
+.badge.plan{color:var(--blue);background:rgba(63,169,245,.1);border:1px solid rgba(63,169,245,.35)}
+
+/* section */
+section{padding:58px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:30px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(22px,3vw,28px);font-weight:800}
+.sec-head h2 i{font-style:normal;color:var(--green)}
+.sec-head p{color:var(--muted);font-size:14px;max-width:520px;margin-top:6px}
+
+/* interest grid */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:24px;transition:.25s;
+}
+.card:hover{border-color:rgba(32,214,138,.45);transform:translateY(-3px)}
+.card .icon{
+  width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:rgba(32,214,138,.1);border:1px solid rgba(32,214,138,.25);margin-bottom:16px;
+}
+.card .icon svg{width:24px;height:24px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted)}
+.card ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.card ul li{font-size:13px;color:#b9cade;display:flex;gap:8px}
+.card ul li::before{content:"›";color:var(--green);font-weight:700}
+
+/* schedule table */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:620px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:1px;color:var(--muted);font-weight:600;background:rgba(255,255,255,.02)}
+tr:last-child td{border-bottom:none}
+td.match{font-weight:600}
+td.time{color:var(--muted);white-space:nowrap}
+
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+.flow-item{
+  position:relative;background:linear-gradient(180deg,#122335,#0e1c2b);
+  border:1px solid var(--line);border-radius:14px;padding:26px 22px;
+}
+.flow-item::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:13px;font-weight:800;color:var(--green);letter-spacing:2px;
+}
+.flow-item h3{margin:10px 0 8px;font-size:16px}
+.flow-item p{font-size:14px;color:var(--muted)}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.qa{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.qa h3{font-size:15px;margin-bottom:8px;display:flex;gap:9px}
+.qa h3 span{color:var(--green);font-weight:800}
+.qa p{font-size:13.5px;color:var(--muted)}
+
+/* notice */
+.notice{
+  border:1px solid rgba(255,181,71,.3);background:rgba(255,181,71,.06);
+  border-radius:12px;padding:18px 22px;font-size:13.5px;color:#d9c8a8;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.notice svg{width:20px;height:20px;flex:none;margin-top:3px}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:#08111b;padding:42px 0 30px;margin-top:20px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+.foot h4{font-size:14px;margin-bottom:14px;color:#fff}
+.foot p{font-size:13px;color:var(--muted);max-width:340px}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot ul a{font-size:13px;color:var(--muted)}
+.foot ul a:hover{color:var(--green)}
+.copy{border-top:1px solid var(--line);margin-top:32px;padding-top:20px;font-size:12.5px;color:#6d8299;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:40px 0}
+  .grid-3,.flow{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .burger{display:block}
+  .nav-cta{display:none}
+  section{padding:44px 0}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="jrs直播吧首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d1b2a"/>
+        <circle cx="32" cy="32" r="16" fill="none" stroke="#20d68a" stroke-width="4"/>
+        <path d="M32 16v32M16 32h32" stroke="#20d68a" stroke-width="3"/>
+      </svg>
+      <span>jrs直播<b>吧</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#hot">热门赛事</a>
+      <a href="#schedule">赛程速览</a>
+      <a href="#howto">访问指引</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="nav-cta" href="#hot">进入直播导航</a>
+    <button class="burger" aria-label="展开导航" onclick="document.getElementById('hot').scrollIntoView({behavior:'smooth'})">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="hero-tag"><i class="dot"></i>体育直播导航 · 赛事实时聚合</span>
+        <h1>jrs直播吧</h1>
+        <p class="lead">jrs直播吧把篮球、足球等热门赛事的直播入口集中在一页，按开赛时间与联赛分类排列，方便球迷快速定位想看的比赛，减少在多站之间反复查找的时间。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#hot">查看热门赛事</a>
+          <a class="btn btn-ghost" href="#schedule">赛程速览</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>3 大类</b><span>篮球 / 足球 / 综合</span></div>
+          <div><b>每日更新</b><span>直播入口与赛程</span></div>
+          <div><b>多线路</b><span>清晰度可选</span></div>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-label="今日直播概览">
+        <h3>今日直播概览</h3>
+        <ul class="live-list">
+          <li>
+            <span class="lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffb547" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+              <span>篮球 · 常规赛焦点战</span>
+            </span>
+            <span class="badge live">直播中</span>
+          </li>
+          <li>
+            <span class="lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#20d68a" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+              <span>足球 · 联赛第 12 轮</span>
+            </span>
+            <span class="badge soon">即将开始</span>
+          </li>
+          <li>
+            <span class="lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3fa9f5" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+              <span>足球 · 洲际杯小组赛</span>
+            </span>
+            <span class="badge plan">待开赛</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- HOT -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热门赛事 <i>分类入口</i></h2>
+          <p>jrs直播吧按项目与联赛热度整理入口，先选项目，再看具体场次，路径更短。</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#20d68a" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18"/></svg>
+          </div>
+          <h3>篮球直播</h3>
+          <p>覆盖职业篮球常规赛、季后赛与国家队赛事，常见入口按开赛时间倒序排列。</p>
+          <ul>
+            <li>常规赛与季后赛分区</li>
+            <li>主队 / 客队快速识别</li>
+            <li>多线路备用入口</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#20d68a" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+          </div>
+          <h3>足球直播</h3>
+          <p>汇集主流联赛、杯赛与国际赛事，赛前可先确认对阵与开球时间再进入观看。</p>
+          <ul>
+            <li>联赛与杯赛分类</li>
+            <li>开球时间一目了然</li>
+            <li>赛前提示与状态标记</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#20d68a" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 5v14"/></svg>
+          </div>
+          <h3>综合赛事</h3>
+          <p>网球、排球、电竞等项目的直播入口也集中在此，适合关注多项目赛程的观众。</p>
+          <ul>
+            <li>跨项目聚合展示</li>
+            <li>按日期浏览</li>
+            <li>热门场次优先展示</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>赛程速览 <i>与状态说明</i></h2>
+          <p>下表为 jrs直播吧 首页常见的赛程信息结构示例，实际对阵与时间以各赛事官方公布为准。</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>项目 / 赛事</th>
+              <th>阶段</th>
+              <th>开赛时间</th>
+              <th>入口状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="match">篮球 · 职业联赛</td>
+              <td>常规赛</td>
+              <td class="time">19:35</td>
+              <td><span class="badge live">直播中</span></td>
+            </tr>
+            <tr>
+              <td class="match">足球 · 主流联赛</td>
+              <td>第 12 轮</td>
+              <td class="time">21:00</td>
+              <td><span class="badge soon">即将开始</span></td>
+            </tr>
+            <tr>
+              <td class="match">足球 · 洲际杯</td>
+              <td>小组赛</td>
+              <td class="time">次日 03:00</td>
+              <td><span class="badge plan">待开赛</span></td>
+            </tr>
+            <tr>
+              <td class="match">篮球 · 季后赛</td>
+              <td>首轮</td>
+              <td class="time">次日 08:30</td>
+              <td><span class="badge plan">待开赛</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO -->
+  <section id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>访问指引 <i>三步找到比赛</i></h2>
+          <p>jrs直播吧的定位是导航页：先确认赛程，再选择项目，最后进入对应入口。</p>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-item">
+          <h3>确认赛事与时间</h3>
+          <p>打开赛程速览，核对项目、联赛阶段与开赛时间，避免错过正在进行的场次。</p>
+        </div>
+        <div class="flow-item">
+          <h3>选择项目分类</h3>
+          <p>在热门赛事区按篮球、足球或综合项目筛选，缩小范围后定位具体对阵。</p>
+        </div>
+        <div class="flow-item">
+          <h3>进入直播入口</h3>
+          <p>点击对应场次进入观看页，如遇线路拥堵可切换备用入口，保持网络稳定。</p>
+        </div>
+      </div>
+
+      <div style="margin-top:26px" class="notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffb547" stroke-width="1.8"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+        <div>jrs直播吧 本身不制作赛事内容，页面仅提供赛事信息与入口导航。赛事版权归各主办方与转播方所有，观看时请遵守当地法律法规与平台规则。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--bg2);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见问题 <i>快速解答</i></h2>
+          <p>关于 jrs直播吧 的使用方式，这里汇总了几条最常被问到的内容。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="qa">
+          <h3><span>Q</span>jrs直播吧 需要注册账号吗？</h3>
+          <p>页面定位为赛事导航，浏览赛程与入口信息无需注册；具体观看环节是否要求登录，取决于所跳转的直播平台。</p>
+        </div>
+        <div class="qa">
+          <h3><span>Q</span>赛程时间与页面显示不一致怎么办？</h3>
+          <p>赛程可能因转播安排临时调整，建议以赛事官方发布的时间为准，页面上的时间仅作浏览参考。</p>
+        </div>
+        <div class="qa">
+          <h3><span>Q</span>直播画面卡顿如何处理？</h3>
+          <p>可先切换页面提供的备用线路，并检查本地网络；高峰时段多线路并行能有效降低卡顿概率。</p>
+        </div>
+        <div class="qa">
+          <h3><span>Q</span>支持手机端观看吗？</h3>
+          <p>jrs直播吧 页面已适配移动端布局，手机浏览器可正常浏览赛程与入口，建议使用竖屏查看列表、横屏观看比赛。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD / CTA -->
+  <section>
+    <div class="wrap">
+      <div class="card" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px;background:linear-gradient(120deg,#12283a,#0e1c2b)">
+        <div>
+          <h2 style="font-size:22px;margin-bottom:8px">赛程速查卡片</h2>
+          <p style="font-size:14px;color:var(--muted);max-width:560px">将 jrs直播吧 的常用赛事分类与访问步骤保存为速查卡片，方便赛前快速核对项目与开赛时间。</p>
+        </div>
+        <a class="btn btn-main" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>jrs直播吧</h4>
+        <p>专注体育赛事直播信息聚合的导航首页，帮助球迷用更短的时间找到篮球、足球等热门赛事的观赛入口。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#hot">热门赛事分类</a></li>
+          <li><a href="#schedule">赛程速览</a></li>
+          <li><a href="#howto">访问指引</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li><a href="#howto">赛前核对开赛时间</a></li>
+          <li><a href="#faq">线路切换与网络检查</a></li>
+          <li><a href="#faq">移动端浏览建议</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2024 jrs直播吧 · 赛事信息导航页</span>
+      <span>赛事版权归主办方与转播方所有</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+          </html>
