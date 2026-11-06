@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日黑料在线观看-黑料热点在线观看_吃瓜爆料视频在线看</title>
+<meta name="description" content="每日黑料在线观看首页，汇总当日吃瓜黑料与热点爆料视频，按话题分区呈现，支持关键词检索与标签筛选，帮助你快速找到想看的黑料内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315151b'/%3E%3Ccircle cx='32' cy='30' r='15' fill='none' stroke='%23ff5a4d' stroke-width='4'/%3E%3Cpath d='M32 15v30M17 30h30' stroke='%23ff5a4d' stroke-width='3'/%3E%3Cpath d='M24 50h16' stroke='%23f5c451' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#101014;
+  --bg-soft:#17171d;
+  --card:#1c1c24;
+  --line:#2b2b36;
+  --text:#ececf1;
+  --muted:#9a9aa8;
+  --red:#ff5a4d;
+  --gold:#f5c451;
+  --radius:14px;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 20px;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{left:8px;top:8px;background:var(--red);color:#fff;padding:8px 14px;border-radius:8px;z-index:99;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(16,16,20,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  display:flex;align-items:center;gap:18px;
+  min-height:64px;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-weight:800;font-size:17px;letter-spacing:.5px;
+  white-space:nowrap;
+}
+.logo .mark{width:32px;height:32px;flex:0 0 32px;}
+.logo b{color:var(--text);}
+.logo b em{color:var(--red);font-style:normal;}
+nav.main{margin-left:auto;}
+nav.main ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+nav.main a{
+  display:inline-block;padding:6px 12px;border-radius:8px;
+  font-size:14px;color:var(--muted);transition:.2s;
+}
+nav.main a:hover,nav.main a:focus-visible{color:var(--text);background:#23232c;}
+.nav-toggle{
+  display:none;margin-left:auto;background:var(--card);border:1px solid var(--line);
+  color:var(--text);border-radius:8px;padding:6px 12px;font-size:14px;cursor:pointer;
+}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 380px at 12% -10%,rgba(255,90,77,.20),transparent 60%),
+    radial-gradient(700px 340px at 92% 0%,rgba(245,196,81,.12),transparent 62%),
+    var(--bg-soft);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.25fr .75fr;gap:36px;
+  padding:52px 0 48px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--gold);letter-spacing:1px;
+  border:1px solid rgba(245,196,81,.35);border-radius:999px;
+  padding:4px 12px;margin-bottom:16px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--red);}
+h1{
+  font-size:clamp(26px,4.4vw,42px);
+  line-height:1.25;margin:0 0 14px;font-weight:800;letter-spacing:.5px;
+}
+h1 span{color:var(--red);}
+.hero p.lead{color:var(--muted);margin:0 0 24px;max-width:34em;font-size:15.5px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;
+  border:1px solid transparent;transition:.2s;cursor:pointer;
+}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 8px 22px -10px rgba(255,90,77,.9);}
+.btn-primary:hover,.btn-primary:focus-visible{background:#ff7468;}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line);}
+.btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--muted);background:#1e1e26;}
+.hero-visual{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;
+}
+.ticker-title{font-size:13px;color:var(--muted);letter-spacing:1px;margin:0 0 12px;display:flex;justify-content:space-between;}
+.ticker-title span:last-child{color:var(--red);}
+.ticker-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+.ticker-list li{
+  display:flex;gap:10px;align-items:flex-start;
+  font-size:14px;color:#d6d6de;padding-bottom:10px;border-bottom:1px dashed #2a2a34;
+}
+.ticker-list li:last-child{border-bottom:0;padding-bottom:0;}
+.tag{
+  flex:0 0 auto;font-size:12px;line-height:1.6;padding:0 8px;border-radius:6px;
+  background:rgba(255,90,77,.14);color:#ff8b81;white-space:nowrap;
+}
+
+/* section base */
+section.block{padding:52px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap;}
+.sec-head h2{font-size:22px;margin:0;letter-spacing:.5px;}
+.sec-head h2::before{
+  content:"";display:inline-block;width:8px;height:8px;border-radius:2px;
+  background:var(--red);margin-right:10px;vertical-align:middle;
+}
+.sec-head p{margin:4px 0 0;color:var(--muted);font-size:14px;}
+.sec-more{font-size:14px;color:var(--gold);white-space:nowrap;}
+.sec-more:hover{text-decoration:underline;}
+
+/* topic cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;display:flex;flex-direction:column;gap:10px;transition:.2s;
+}
+.card:hover{border-color:#3b3b48;transform:translateY(-2px);}
+.card .thumb{
+  border-radius:10px;overflow:hidden;background:#0e0e12;border:1px solid #26262f;
+}
+.card h3{margin:2px 0 0;font-size:17px;line-height:1.5;}
+.card p{margin:0;color:var(--muted);font-size:14px;}
+.card .meta{display:flex;gap:10px;font-size:12.5px;color:#7d7d8c;margin-top:auto;padding-top:6px;}
+.card .meta .hot{color:var(--gold);}
+
+/* list rows */
+.rows{display:grid;gap:12px;}
+.row{
+  display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+}
+.row .no{
+  font-size:20px;font-weight:800;color:#3a3a46;font-variant-numeric:tabular-nums;
+}
+.row:nth-child(-n+3) .no{color:var(--red);}
+.row .body h3{margin:0 0 4px;font-size:15.5px;font-weight:600;}
+.row .body p{margin:0;font-size:13px;color:var(--muted);}
+.row .stat{font-size:12.5px;color:#7d7d8c;white-space:nowrap;}
+
+/* filter */
+.filter-bar{
+  display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;margin-bottom:20px;
+}
+.filter-bar label{font-size:13.5px;color:var(--muted);}
+.filter-bar input[type="search"]{
+  flex:1 1 220px;min-width:0;background:#121218;border:1px solid var(--line);
+  color:var(--text);border-radius:8px;padding:9px 12px;font-size:14px;outline:none;
+}
+.filter-bar input[type="search"]:focus{border-color:var(--red);}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{
+  background:#121218;border:1px solid var(--line);color:var(--muted);
+  border-radius:999px;padding:5px 14px;font-size:13px;cursor:pointer;transition:.2s;
+}
+.chip:hover{color:var(--text);border-color:#3b3b48;}
+.chip.active{background:rgba(255,90,77,.16);border-color:rgba(255,90,77,.6);color:#ff8b81;}
+.no-result{display:none;color:var(--muted);font-size:14px;padding:14px 4px;}
+.no-result.show{display:block;}
+
+/* about / article */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;}
+.about-grid article p{color:#c4c4cf;font-size:15px;margin:0 0 14px;}
+.about-grid article p strong{color:var(--text);}
+.aside-box{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+}
+.aside-box h3{margin:0 0 12px;font-size:16px;}
+.aside-box ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px;display:grid;gap:8px;}
+
+/* download */
+.dl-box{
+  display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  background:linear-gradient(120deg,#1d1d25,#16161c);
+  border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+}
+.dl-box h2{margin:0 0 6px;font-size:19px;}
+.dl-box p{margin:0;color:var(--muted);font-size:14px;max-width:46em;}
+.btn[aria-disabled="true"]{opacity:.66;}
+
+/* footer */
+footer.site{border-top:1px solid var(--line);background:#0c0c10;padding:34px 0 26px;margin-top:20px;}
+.foot-grid{display:flex;gap:28px;justify-content:space-between;flex-wrap:wrap;}
+.foot-brand{max-width:34em;}
+.foot-brand p{color:var(--muted);font-size:13.5px;margin:10px 0 0;}
+.foot-links{display:flex;gap:28px;flex-wrap:wrap;}
+.foot-links ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13.5px;color:var(--muted);}
+.foot-links li a:hover{color:var(--text);}
+.foot-links h4{margin:0 0 4px;font-size:13px;color:#cfcfd8;letter-spacing:1px;}
+.copy{margin-top:24px;padding-top:16px;border-top:1px solid #1c1c24;font-size:12.5px;color:#6c6c7a;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:26px;padding:38px 0 34px;}
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .about-grid{grid-template-columns:1fr;}
+}
+@media (max-width:720px){
+  body{font-size:15px;}
+  nav.main{display:none;position:absolute;top:64px;left:0;right:0;background:#14141a;border-bottom:1px solid var(--line);padding:10px 20px 16px;}
+  nav.main.open{display:block;}
+  nav.main ul{flex-direction:column;gap:2px;}
+  nav.main a{display:block;padding:9px 10px;}
+  .nav-toggle{display:block;}
+  .logo{font-size:15px;}
+  .logo .mark{width:28px;height:28px;flex:0 0 28px;}
+  section.block{padding:38px 0;}
+  .cards{grid-template-columns:1fr;}
+  .row{grid-template-columns:44px 1fr;gap:12px;}
+  .row .stat{grid-column:2;font-size:12px;}
+  .sec-head h2{font-size:19px;}
+  .dl-box{padding:20px;}
+  .btn{width:100%;justify-content:center;}
+  .hero-actions .btn{width:100%;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="每日黑料在线观看 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#1c1c24"/>
+        <circle cx="32" cy="29" r="14" fill="none" stroke="#ff5a4d" stroke-width="4"/>
+        <path d="M32 15v28M18 29h28" stroke="#ff5a4d" stroke-width="3"/>
+        <path d="M24 49h16" stroke="#f5c451" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <b>每日黑料<em>在线观看</em></b>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainnav">菜单</button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <ul>
+        <li><a href="#today">今日热点</a></li>
+        <li><a href="#topics">话题分区</a></li>
+        <li><a href="#ranking">热榜</a></li>
+        <li><a href="#browse">在线浏览</a></li>
+        <li><a href="#about">关于本站</a></li>
+        <li><a href="#download">客户端</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div id="top"></div>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>当日更新 · 吃瓜热点汇总</span>
+        <h1>每日黑料在线观看</h1>
+        <p class="lead">这里把当天流传较广的吃瓜黑料、爆料视频与热点截图按话题归拢，一个页面就能浏览条目、看清来龙去脉，再决定点开哪一条。每日黑料在线观看，从时间线和话题分区两处入手，省去反复翻找的麻烦。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#browse">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 3l14 9-14 9V3z"/></svg>
+            开始在线浏览
+          </a>
+          <a class="btn btn-ghost" href="#topics">按话题找黑料</a>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-label="今日速览">
+        <p class="ticker-title"><span>今日速览</span><span>更新中</span></p>
+        <ul class="ticker-list">
+          <li><span class="tag">娱圈</span><span>某剧组路透照流出，评论区出现两种说法，时间线已梳理。</span></li>
+          <li><span class="tag">网红</span><span>直播片段被二次剪辑传播，原片与剪辑版差异点已标出。</span></li>
+          <li><span class="tag">社会</span><span>一段街头视频引发讨论，多方回应集中在同一天发布。</span></li>
+          <li><span class="tag">体坛</span><span>赛后采访片段被单独截取，前后语境已补全。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>今日热点条目</h2>
+          <p>按话题分区挑选几条当日讨论度较高的内容，只做条目梳理与来源标注。</p>
+        </div>
+        <a class="sec-more" href="#browse">查看全部条目 →</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 320 160" role="img" aria-label="话题一配图：对话气泡">
+              <rect width="320" height="160" fill="#15151b"/>
+              <rect x="30" y="34" width="120" height="46" rx="10" fill="#26262f"/>
+              <rect x="46" y="50" width="70" height="6" rx="3" fill="#ff5a4d"/>
+              <rect x="46" y="62" width="48" height="6" rx="3" fill="#4a4a58"/>
+              <rect x="170" y="72" width="120" height="46" rx="10" fill="#26262f"/>
+              <rect x="186" y="88" width="70" height="6" rx="3" fill="#f5c451"/>
+              <rect x="186" y="100" width="52" height="6" rx="3" fill="#4a4a58"/>
+            </svg>
+          </div>
+          <h3>娱圈路透与官方物料对不上</h3>
+          <p>同一天流出的两组照片在服装细节上存在差异，我们把发布时间与发布账号列在一起，方便自己对照判断。</p>
+          <div class="meta"><span class="hot">热度较高</span><span>娱圈</span><span>今日</span></div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 320 160" role="img" aria-label="话题二配图：播放与剪辑">
+              <rect width="320" height="160" fill="#15151b"/>
+              <circle cx="110" cy="80" r="38" fill="none" stroke="#ff5a4d" stroke-width="4"/>
+              <path d="M100 62l26 18-26 18V62z" fill="#ff5a4d"/>
+              <path d="M170 52h110M170 72h86M170 92h110M170 112h64" stroke="#3a3a46" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>直播片段被二次剪辑后的差异</h3>
+          <p>剪辑版与原片在时长和顺序上并不一致，条目中分别标注了两版的时长，并给出原片出处，避免只看片段下结论。</p>
+          <div class="meta"><span class="hot">讨论上升</span><span>网红</span><span>今日</span></div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 320 160" role="img" aria-label="话题三配图：多条回应并列">
+              <rect width="320" height="160" fill="#15151b"/>
+              <rect x="34" y="38" width="76" height="84" rx="8" fill="#26262f"/>
+              <rect x="122" y="38" width="76" height="84" rx="8" fill="#26262f"/>
+              <rect x="210" y="38" width="76" height="84" rx="8" fill="#26262f"/>
+              <rect x="46" y="54" width="50" height="6" rx="3" fill="#ff5a4d"/>
+              <rect x="134" y="54" width="50" height="6" rx="3" fill="#f5c451"/>
+              <rect x="222" y="54" width="50" height="6" rx="3" fill="#4a4a58"/>
+              <rect x="46" y="70" width="36" height="6" rx="3" fill="#3a3a46"/>
+              <rect x="134" y="70" width="36" height="6" rx="3" fill="#3a3a46"/>
+              <rect x="222" y="70" width="36" height="6" rx="3" fill="#3a3a46"/>
+            </svg>
+          </div>
+          <h3>多方回应集中在同一天</h3>
+          <p>当事方、相关机构与现场目击者的说法先后出现，我们把回应时间排成顺序，看清楚哪一条在先、哪一条在后。</p>
+          <div class="meta"><span class="hot">持续跟进</span><span>社会</span><span>今日</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="topics" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>话题分区</h2>
+          <p>按领域拆分，进入分区后看该领域的条目与时间线，不必在信息流里来回翻。</p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>娱圈爆料</h3>
+          <p>剧集、综艺与艺人相关的路透、物料与采访片段，重点标注首次出现的时间与来源账号。</p>
+          <div class="meta"><span>条目按日更新</span></div>
+        </article>
+        <article class="card">
+          <h3>网红与直播</h3>
+          <p>直播切片、短视频与原片对照，注明剪辑版与原片的时长差异，方便自己回看原始内容。</p>
+          <div class="meta"><span>含原片出处</span></div>
+        </article>
+        <article class="card">
+          <h3>社会热点</h3>
+          <p>街头视频、现场画面与多方回应，按时间先后排列，不替任何一方下结论。</p>
+          <div class="meta"><span>回应时间线</span></div>
+        </article>
+        <article class="card">
+          <h3>体坛与赛场</h3>
+          <p>赛后采访与现场镜头的完整语境，单独截取的片段会标出上下文的缺失部分。</p>
+          <div class="meta"><span>片段语境补全</span></div>
+        </article>
+        <article class="card">
+          <h3>网络传闻</h3>
+          <p>尚未被证实的说法集中放在这里，逐条标注流传起点与目前的可核对程度。</p>
+          <div class="meta"><span>标注确定程度</span></div>
+        </article>
+        <article class="card">
+          <h3>旧事回看</h3>
+          <p>过去曾引发讨论、近期又被重新提起的条目，补上当时的官方回应与后续结果。</p>
+          <div class="meta"><span>补后续结果</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ranking">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>浏览热榜</h2>
+          <p>按页面内浏览与收藏整理，只反映本站条目的被看次数，不代表事件本身的重要性。</p>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="row">
+          <div class="no">01</div>
+          <div class="body"><h3>某剧组两组路透的服装差异</h3><p>条目内附两张原图与发布账号截图，时间线已排好。</p></div>
+          <div class="stat">浏览较多</div>
+        </div>
+        <div class="row">
+          <div class="no">02</div>
+          <div class="body"><h3>直播剪辑版与原片时长对照</h3><p>两版时长与关键节点并列，原片出处可点开查看。</p></div>
+          <div class="stat">浏览较多</div>
+        </div>
+        <div class="row">
+          <div class="no">03</div>
+          <div class="body"><h3>街头视频的多方回应顺序</h3><p>回应时间从早到晚排列，标出最先发布的一方。</p></div>
+          <div class="stat">浏览较多</div>
+        </div>
+        <div class="row">
+          <div class="no">04</div>
+          <div class="body"><h3>赛后采访被截取的前后语境</h3><p>补上被剪掉的前半段提问，附完整采访链接。</p></div>
+          <div class="stat">浏览平稳</div>
+        </div>
+        <div class="row">
+          <div class="no">05</div>
+          <div class="body"><h3>旧传闻近期再被提起</h3><p>当时已有官方回应，条目内补上后续处理结果。</p></div>
+          <div class="stat">浏览平稳</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="browse" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>在线浏览与检索</h2>
+          <p>输入关键词或点选标签，即时筛选下方条目；内容全部直接呈现在本页，无需跳转。</p>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <label for="q">检索条目</label>
+        <input type="search" id="q" placeholder="输入话题、人物或关键词，如：剪辑、回应、赛后" autocomplete="off">
+        <div class="chips" role="group" aria-label="标签筛选">
+          <button class="chip active" type="button" data-tag="all">全部</button>
+          <button class="chip" type="button" data-tag="娱圈">娱圈</button>
+          <button class="chip" type="button" data-tag="网红">网红</button>
+          <button class="chip" type="button" data-tag="社会">社会</button>
+          <button class="chip" type="button" data-tag="体坛">体坛</button>
+          <button class="chip" type="button" data-tag="传闻">传闻</button>
+        </div>
+      </div>
+
+      <div class="rows" id="browse-list">
+        <div class="row" data-tag="娱圈" data-key="剧组 路透 服装 娱圈 物料">
+          <div class="no">A1</div>
+          <div class="body"><h3>剧组路透与官方物料服装不一致</h3><p>两张原图与发布账号截图并列，首次发布时间已标注。</p></div>
+          <div class="stat">娱圈 · 今日</div>
+        </div>
+        <div class="row" data-tag="网红" data-key="直播 剪辑 原片 时长 网红">
+          <div class="no">A2</div>
+          <div class="body"><h3>直播片段剪辑版与原片对照</h3><p>两版时长、关键节点与原片出处一并列出。</p></div>
+          <div class="stat">网红 · 今日</div>
+        </div>
+        <div class="row" data-tag="社会" data-key="街头 视频 回应 时间线 社会">
+          <div class="no">A3</div>
+          <div class="body"><h3>街头视频的多方回应时间线</h3><p>回应按先后排列，标出最先发声的一方。</p></div>
+          <div class="stat">社会 · 今日</div>
+        </div>
+        <div class="row" data-tag="体坛" data-key="赛后 采访 截取 语境 体坛">
+          <div class="no">A4</div>
+          <div class="body"><h3>赛后采访被截取的前后语境</h3><p>补回被剪掉的前半段提问，附完整采访链接。</p></div>
+          <div class="stat">体坛 · 今日</div>
+        </div>
+        <div class="row" data-tag="传闻" data-key="旧闻 传闻 官方回应 后续 回看">
+          <div class="no">A5</div>
+          <div class="body"><h3>旧传闻再被提起的后续结果</h3><p>当时官方回应与后续处理结果一并补充。</p></div>
+          <div class="stat">传闻 · 近期</div>
+        </div>
+        <div class="row" data-tag="娱圈" data-key="综艺 花絮 娱圈 片段 二次传播">
+          <div class="no">A6</div>
+          <div class="body"><h3>综艺花絮被二次传播的版本差异</h3><p>原始花絮与传播版本逐段对照，标出增删内容。</p></div>
+          <div class="stat">娱圈 · 近期</div>
+        </div>
+      </div>
+      <p class="no-result" id="no-result">没有匹配的条目，换个关键词或点选“全部”再试一次。</p>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>关于本站与阅读方式</h2>
+          <p>每日黑料在线观看做的是条目归拢与来源标注，不生成内容，也不替事件定性。</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <article>
+          <p><strong>每日黑料在线观看</strong>面向想快速了解当天吃瓜热点的访问者。站内条目由编辑根据公开流传的图片、视频与文字记录整理，按话题分区与时间线排列，尽量保留原始出处，让读者能顺着线索回到源头核对。</p>
+          <p>每条内容一般包含三部分：事件简述、可核对的关键细节、来源说明。涉及剪辑版本的内容，会把剪辑版与原片的时长、顺序差异写清楚；涉及多方回应的内容，会把回应时间从早到晚排一遍。这样做的目的不是给出结论，而是让判断所需的材料摆在一起。</p>
+          <p>需要说明的是，本站条目中的说法属于流传信息，未经正式核实前应保持谨慎；标注为“传闻”的内容尤其如此。若发现条目信息有误，可通过页尾联系方式反馈，编辑会在核对后修订，并在条目内注明修改时间。</p>
+        </article>
+        <aside class="aside-box">
+          <h3>阅读建议</h3>
+          <ul>
+            <li>先看条目的时间线，再看结论性说法。</li>
+            <li>遇到剪辑片段，先确认原片时长。</li>
+            <li>注意来源账号是否为首次发布方。</li>
+            <li>标注“传闻”的条目，等待更多信息。</li>
+            <li>旧事回看区可补上后续处理结果。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="download">
+    <div class="wrap">
+      <div class="dl-box">
+        <div>
+          <h2>每日黑料在线观看客户端</h2>
+          <p>客户端整理当日条目、支持离线保存已看内容与话题订阅提醒，条目来源与网页端保持一致。当前版本仍在准备中，下载入口上线后会在此处开放。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top" aria-label="返回顶部">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="14" fill="#1c1c24"/>
+            <circle cx="32" cy="29" r="14" fill="none" stroke="#ff5a4d" stroke-width="4"/>
+            <path d="M32 15v28M18 29h28" stroke="#ff5a4d" stroke-width="3"/>
+            <path d="M24 49h16" stroke="#f5c451" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <b>每日黑料<em>在线观看</em></b>
+        </a>
+        <p>每日黑料在线观看，条目归拢、来源标注、时间线梳理。页面内容基于公开流传信息整理，未经核实的说法会明确标注，请理性阅读。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>内容</h4>
+          <ul>
+            <li><a href="#today">今日热点</a></li>
+            <li><a href="#topics">话题分区</a></li>
+            <li><a href="#ranking">浏览热榜</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>使用</h4>
+          <ul>
+            <li><a href="#browse">在线浏览</a></li>
+            <li><a href="#about">阅读方式</a></li>
+            <li><a href="#download">客户端</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© 每日黑料在线观看 · 条目内容为流传信息整理，不代表事实认定；如有异议请联系修订。</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('mainnav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 720){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var input = document.getElementById('q');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#browse-list .row'));
+  var noResult = document.getElementById('no-result');
+  var activeTag = 'all';
+
+  function apply(){
+    var kw = (input && input.value ? input.value : '').trim().toLowerCase();
+    var shown = 0;
+    rows.forEach(function(row){
+      var tag = row.getAttribute('data-tag') || '';
+      var key = (row.getAttribute('data-key') || '') + ' ' + row.textContent;
+      var okTag = activeTag === 'all' || tag === activeTag;
+      var okKw = !kw || key.toLowerCase().indexOf(kw) > -1;
+      var show = okTag && okKw;
+      row.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    if(noResult) noResult.classList.toggle('show', shown === 0);
+  }
+
+  if(input) input.addEventListener('input', apply);
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      activeTag = chip.getAttribute('data-tag') || 'all';
+      apply();
+    });
+  });
+})();
+</script>
+</body>
+              </html>
